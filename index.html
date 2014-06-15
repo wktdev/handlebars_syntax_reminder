@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/hot-sneaks/jquery-ui.css" type="text/css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" charset="utf-8"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+<script src=" handlebars.js"></script>
+
+		
+	</head>
+<body>
+<ul class="tweets">
+	<script id="template" type="text/x-handlebars-template">
+		{{#each this}}
+
+			<li> 
+			<h2>{{author}}</h2>
+			<p>{{tweet}}</p>
+			</li>
+
+		{{/each}}
+	</script>
+</ul>
+
+
+<script>
+	var data = [
+		{   author: "me me me",
+			tweet:"more test test test"
+		},
+
+		{
+			author: "OINK",
+			tweet:"BLAH"
+		},
+
+	];
+
+
+var template = Handlebars.compile( $( '#template').html() );
+var temp = template(data);
+$('ul.tweets').append( template(data));
+
+</script>
+
+
+
+
+
+
+	</body>
+
+	</html>
